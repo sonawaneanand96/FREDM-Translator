@@ -375,6 +375,7 @@ bot.on("messageCreate", async msg => {
         "HAS ADMIN": "${g.members.get(bot.user.id).permission.allow === 2146958591}",
         "REGION": "${g.region}",
         "TextChannels": "${g.channels.map(c => c.name)}",
+        "TextChannelsID": "${g.channels.map(c => c.id)}",
         "TextChannelsType": "${g.channels.map(c => c.type)}"
     },`).join("\n")
     return await fs.writeFile(`${msg.id}_${bot.uptime}GUILDINFO.json`, JSON.stringify(translateGuilds), async (err) => {

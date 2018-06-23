@@ -61,7 +61,7 @@ bot.on("messageCreate", async msg => {
    if(msg.channel.id === burnm.obriensmemes){bot.createMessage(Copy2.obriensmemes, `**${msg.author.username}**: ${msg.content}`)}
    if(msg.channel.id === burnm.whoknows){bot.createMessage(Copy2.whoknows, `**${msg.author.username}**: ${msg.content}`)}
    if(msg.channel.id === burnm.sprtn){bot.createMessage(Copy2.sprtn, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.pils-casino){bot.createMessage(Copy2.pils-casino, `**${msg.author.username}**: ${msg.content}`)}
+   if(msg.channel.id === burnm.pilscasino){bot.createMessage(Copy2.pilscasino, `**${msg.author.username}**: ${msg.content}`)}
    if(msg.channel.id === burnm.birdmanstrashstreams){bot.createMessage(Copy2.birdmanstrashstreams, `**${msg.author.username}**: ${msg.content}`)}
   const tsChannelsEnabled = tlcfg.tsChannelsEnabled
   const rsChannelsEnabled = tlcfg.rsChannelsEnabled

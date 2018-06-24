@@ -45,24 +45,32 @@ bot.on("ready", () => {
 })
 bot.on("messageCreate", async msg => {
   if(msg.author.bot) return
-   if(msg.channel.id === us1.alliancemain){bot.createMessage(Copy1.alliancemain, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === us1.warroom){bot.createMessage(Copy1.warroom, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === us1.battlereports){bot.createMessage(Copy1.battlereports, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === us1.announcements){bot.createMessage(Copy1.announcements, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === us1.highcouncil){bot.createMessage(Copy1.highcouncil, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === us1.officerscouncil){bot.createMessage(Copy1.officerscouncil, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === us1.sprtn){bot.createMessage(Copy1.sprtn, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === us1.igeri){bot.createMessage(Copy1.igeri, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === us1.frost){bot.createMessage(Copy1.frost, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.general){bot.createMessage(Copy2.general, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.defense){bot.createMessage(Copy2.defense, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.obriensplace){bot.createMessage(Copy2.obriensplace, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.us1){bot.createMessage(Copy2.us1, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.obriensmemes){bot.createMessage(Copy2.obriensmemes, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.whoknows){bot.createMessage(Copy2.whoknows, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.sprtn){bot.createMessage(Copy2.sprtn, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.pilscasino){bot.createMessage(Copy2.pilscasino, `**${msg.author.username}**: ${msg.content}`)}
-   if(msg.channel.id === burnm.birdmanstrashstreams){bot.createMessage(Copy2.birdmanstrashstreams, `**${msg.author.username}**: ${msg.content}`)}
+   if(msg.channel.guild.id === us1.guild){
+      var site ="";
+      if(msg.attachments[0]){site = msg.attachments[0].url}
+      if(msg.channel.id === us1.alliancemain){bot.createMessage(Copy1.alliancemain, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.warroom){bot.createMessage(Copy1.warroom, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.battlereports){bot.createMessage(Copy1.battlereports, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.announcements){bot.createMessage(Copy1.announcements, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.highcouncil){bot.createMessage(Copy1.highcouncil, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.officerscouncil){bot.createMessage(Copy1.officerscouncil, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.sprtn){bot.createMessage(Copy1.sprtn, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.igeri){bot.createMessage(Copy1.igeri, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.frost){bot.createMessage(Copy1.frost, `**${msg.author.username}**: ${msg.content} ${site}`)}
+   }
+   if(msg.channel.guild.id === burnm.guild){
+      var site ="";
+      if(msg.attachments[0]){site = msg.attachments[0].url}
+      if(msg.channel.id === burnm.general){bot.createMessage(Copy2.general, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === burnm.defense){bot.createMessage(Copy2.defense, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === burnm.obriensplace){bot.createMessage(Copy2.obriensplace, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === burnm.us1){bot.createMessage(Copy2.us1, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === burnm.obriensmemes){bot.createMessage(Copy2.obriensmemes, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === burnm.whoknows){bot.createMessage(Copy2.whoknows, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === burnm.sprtn){bot.createMessage(Copy2.sprtn, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === burnm.pilscasino){bot.createMessage(Copy2.pilscasino, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === burnm.birdmanstrashstreams){bot.createMessage(Copy2.birdmanstrashstreams, `**${msg.author.username}**: ${msg.content} ${site}`)}
+   }
   const tsChannelsEnabled = tlcfg.tsChannelsEnabled
   const rsChannelsEnabled = tlcfg.rsChannelsEnabled
   const args = msg.content.slice(prefix.length).trim().split(/ +/g);

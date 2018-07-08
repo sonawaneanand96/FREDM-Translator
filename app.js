@@ -57,6 +57,10 @@ bot.on("messageCreate", async msg => {
       if(msg.channel.id === us1.sprtn){bot.createMessage(Copy1.sprtn, `**${msg.author.username}**: ${msg.content} ${site}`)}
       if(msg.channel.id === us1.igeri){bot.createMessage(Copy1.igeri, `**${msg.author.username}**: ${msg.content} ${site}`)}
       if(msg.channel.id === us1.frost){bot.createMessage(Copy1.frost, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.flex){bot.createMessage(Copy1.flex, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.klaus){bot.createMessage(Copy1.klaus, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.elite){bot.createMessage(Copy1.elite, `**${msg.author.username}**: ${msg.content} ${site}`)}
+      if(msg.channel.id === us1.united){bot.createMessage(Copy1.united, `**${msg.author.username}**: ${msg.content} ${site}`)}
    }
    if(msg.channel.guild.id === burnm.guild){
       var site ="";

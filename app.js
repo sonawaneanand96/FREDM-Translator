@@ -227,7 +227,8 @@ bot.on("messageCreate", async msg => {
   }
 
   async function invite() {
-    msg.channel.createMessage(`https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&scope=bot&permissions=2146958591`)
+    msg.channel.createMessage(`No invite link for you ;-)`)
+   //https://discordapp.com/oauth2/authorize?client_id=485094387085475850&scope=bot&permissions=2146958591
   }
 
   async function ping() {
@@ -334,11 +335,11 @@ bot.on("messageCreate", async msg => {
       fields: [
         {
           name: "Translating your messages",
-          value: "Translate makes it easy to translate any message you want to just about any language you can think of! All you have to do is type **\":t (language) (text to be translated)\"** and translate will handle the rest! For example, if I want to tell somebody what my name is in korean, I just have to type **\":t korean Hi, my name is Tanner!\"**"
+          value: "Translate makes it easy to translate any message you want to just about any language you can think of! All you have to do is type **\"-t (language) (text to be translated)\"** and translate will handle the rest! For example, if I want to tell somebody what my name is in korean, I just have to type **\"-t korean Hi, my name is Tanner!\"**"
         },
         {
           name: "Finding out what language people are speaking in",
-          value: "If you see people chatting away in a language you dont know, and you want to take part in the conversaion, you can type **\":t lang (text to analyze)\"** and Translate will dissect the message and tell you what language they\"re speaking in! For example, All I\"d have to type is **\":t lang 안녕하세요, 만나서 반가워요!\"** to find out that they\"re speaking in korean"
+          value: "If you see people chatting away in a language you dont know, and you want to take part in the conversaion, you can type **\"-t lang (text to analyze)\"** and Translate will dissect the message and tell you what language they\"re speaking in! For example, All I\"d have to type is **\"-t lang 안녕하세요, 만나서 반가워요!\"** to find out that they\"re speaking in korean"
         },
          {
           name: "Translating Messages Automatically",

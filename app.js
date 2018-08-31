@@ -120,6 +120,8 @@ bot.on("messageCreate", async msg => {
         if(c.topic.toLowerCase().startsWith("ts-")) tsChannels.push({topic: c.topic, id: c.id})
       }
     })
+    var site ="";
+    if(msg.attachments[0]){site = msg.attachments[0].url}
     for(i = 0; i < tsChannels.length; i++) {
       let channelLangReg = /(?<=ts\-)\S+/i;
       let channelLang = channelLangReg.exec(tsChannels[i].topic.toLowerCase());
@@ -127,12 +129,12 @@ bot.on("messageCreate", async msg => {
       for (let l in langs) {
         for (let a in langs[l].alias) {
           if(langs[l].alias[a] === channelLang) {
-            tsChannelTranslate(l, msg.content, `:flag_${langs[l].flag}:`, msg.channel.id, tsChannels[i].id)
+            tsChannelTranslate(l, msg.content, `:flag_${langs[l].flag}:`, msg.channel.id, tsChannels[i].id,site)
           }
         }
       }
     }
-    function tsChannelTranslate(lang, string, flag, sourceChannel, targetChannel) {
+    function tsChannelTranslate(lang, string, flag, sourceChannel, targetChannel,site) {
       if(string == "" || string == null || string == undefined) return;
       if(targetChannel !== sourceChannel) {
         translate(string, { to: lang }).then(res => {
@@ -142,10 +144,10 @@ bot.on("messageCreate", async msg => {
       	return;
       	}
           if (res.text.length > 200) {
-            bot.createMessage(targetChannel, `**${msg.author.username}#${msg.author.discriminator}**: ${res.text}`);
+            bot.createMessage(targetChannel, `**${msg.author.username}#${msg.author.discriminator}**: ${res.text} ${site}`);
           } else {
             bot.createMessage(targetChannel, { embed: {
-              color: 0xFFFFFF, description: `${flag} ${res.text}`, author: {name: `${msg.author.username}#${msg.author.discriminator}`, icon_url: msg.author.avatarURL ? msg.author.avatarURL : msg.author.defaultAvatarURL}
+              color: 0xFFFFFF, description: `${flag} ${res.text} ${site}`, author: {name: `${msg.author.username}#${msg.author.discriminator}`, icon_url: msg.author.avatarURL ? msg.author.avatarURL : msg.author.defaultAvatarURL}
             }});
           }
         }).catch(err => console.error(err) );
@@ -161,6 +163,8 @@ bot.on("messageCreate", async msg => {
         if(c.topic.toLowerCase().startsWith("rs-")) tsChannels.push({topic: c.topic, id: c.id})
       }
     })
+    var site ="";
+    if(msg.attachments[0]){site = msg.attachments[0].url}
     for(i = 0; i < tsChannels.length; i++) {
       let channelLangReg = /(?<=rs\-)\S+/i;
       let channelLang = channelLangReg.exec(tsChannels[i].topic.toLowerCase());
@@ -168,12 +172,12 @@ bot.on("messageCreate", async msg => {
       for (let l in langs) {
         for (let a in langs[l].alias) {
           if(langs[l].alias[a] === channelLang) {
-            tsChannelTranslate(l, msg.content, `:flag_${langs[l].flag}:`, msg.channel.id, tsChannels[i].id)
+            tsChannelTranslate(l, msg.content, `:flag_${langs[l].flag}:`, msg.channel.id, tsChannels[i].id,site)
           }
         }
       }
     }
-    function tsChannelTranslate(lang, string, flag, sourceChannel, targetChannel) {
+    function tsChannelTranslate(lang, string, flag, sourceChannel, targetChannel,site) {
       if(string == "" || string == null || string == undefined) return;
       if(targetChannel !== sourceChannel) {
         translate(string, { to: lang }).then(res => {
@@ -183,10 +187,10 @@ bot.on("messageCreate", async msg => {
       	return;
       	}
          if (res.text.length > 200) {
-            bot.createMessage(targetChannel, `**${msg.author.username}#${msg.author.discriminator}**: ${res.text}`);
+            bot.createMessage(targetChannel, `**${msg.author.username}#${msg.author.discriminator}**: ${res.text} ${site}`);
           } else {
             bot.createMessage(targetChannel, { embed: {
-              color: 0xFFFFFF, description: `${flag} ${res.text}`, author: {name: `${msg.author.username}#${msg.author.discriminator}`, icon_url: msg.author.avatarURL ? msg.author.avatarURL : msg.author.defaultAvatarURL}
+              color: 0xFFFFFF, description: `${flag} ${res.text} ${site}`, author: {name: `${msg.author.username}#${msg.author.discriminator}`, icon_url: msg.author.avatarURL ? msg.author.avatarURL : msg.author.defaultAvatarURL}
             }});
           }
         }).catch(err => console.error(err) );

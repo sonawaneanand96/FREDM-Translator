@@ -1,8 +1,4 @@
 const tlcfg = require("./config.json")
-const us1 = require("./US1.json")
-const Copy1 = require("./Copy1.json")
-const burnm = require("./BURNM.json")
-const Copy2 = require("./Copy2.json")
 const fs = require("fs")
 const Eris = require("eris")
 const OS = require("os")
@@ -45,16 +41,6 @@ bot.on("ready", () => {
 })
 bot.on("messageCreate", async msg => {
   if(msg.author.bot) return
-   if(msg.channel.guild.id === burnm.guild){
-      var site ="";
-      if(msg.attachments[0]){site = msg.attachments[0].url}
-      if(msg.channel.id === burnm.general){bot.createMessage(Copy2.general, `**${msg.author.username}**: ${msg.content} ${site}`)}
-      if(msg.channel.id === burnm.defense){bot.createMessage(Copy2.defense, `**${msg.author.username}**: ${msg.content} ${site}`)}
-      if(msg.channel.id === burnm.obriensplace){bot.createMessage(Copy2.obriensplace, `**${msg.author.username}**: ${msg.content} ${site}`)}
-      if(msg.channel.id === burnm.obriensmemes){bot.createMessage(Copy2.obriensmemes, `**${msg.author.username}**: ${msg.content} ${site}`)}
-      if(msg.channel.id === burnm.whoknows){bot.createMessage(Copy2.whoknows, `**${msg.author.username}**: ${msg.content} ${site}`)}
-      if(msg.channel.id === burnm.pilscasino){bot.createMessage(Copy2.pilscasino, `**${msg.author.username}**: ${msg.content} ${site}`)}
-   }
   const tsChannelsEnabled = tlcfg.tsChannelsEnabled
   const rsChannelsEnabled = tlcfg.rsChannelsEnabled
   const args = msg.content.slice(prefix.length).trim().split(/ +/g);

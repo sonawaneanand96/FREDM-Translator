@@ -227,7 +227,8 @@ bot.on("messageCreate", async msg => {
   }
 
   async function invite() {
-    msg.channel.createMessage(`No invite link for you ;-)`)
+    if (!devs.includes(msg.author.id)){msg.channel.createMessage(`No invite link for you ;-)`)}
+     msg.channel.createMessage(`https://discordapp.com/oauth2/authorize?client_id=485094387085475850&scope=bot&permissions=2146958591`)
    //https://discordapp.com/oauth2/authorize?client_id=485094387085475850&scope=bot&permissions=2146958591
   }
 
